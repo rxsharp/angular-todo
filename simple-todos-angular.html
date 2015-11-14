@@ -7,7 +7,11 @@
      ng-app="simple-todos"
      ng-controller="TodosListCtrl">
   <header>
-    <h1>Todo List</h1>
+    <h1>Todo List ( {{ incompleteCount() }} )</h1>
+    <label class="hide-completed">
+      <input type="checkbox" ng-model="hideCompleted"/>
+      Hide Completed Tasks
+    </label>
     <!-- add a form below the h1 -->
     <form class="new-task" ng-submit="addTask(newTask); newTask='';">
       <input ng-model="newTask" type="text"
@@ -24,7 +28,5 @@
       <span class="text">{{task.text}}</span>
     </li>
   </ul>
- 
-</div>
 </div>
 </body>
